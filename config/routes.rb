@@ -5,12 +5,16 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
     devise_for :directors, controllers: {
       sessions: 'director/sessions',
-      registration: 'director/registrations'
+      registrations: 'director/registrations',
+      confirmations: 'director/confirmations',
+      passwords: 'director/passwords'
     }
 
     devise_for :athletes, controllers: {
       sessions: 'athlete/sessions',
-      registration: 'athlete/registrations'
+      registrations: 'athlete/registrations',
+      confirmations: 'athlete/confirmations',
+      passwords: 'athlete/passwords'
     }
 
     get 'pages/athlete'

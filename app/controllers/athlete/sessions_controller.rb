@@ -9,9 +9,9 @@ class Athlete::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  def create
-    render 'athletes/sessions/new'
-  end
+  # def create
+  #   render 'athletes/sessions/new'
+  # end
 
   # DELETE /resource/sign_out
   # def destroy
