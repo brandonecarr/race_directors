@@ -9,9 +9,9 @@ class Director::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    render 'directors/sessions/new'
+  end
 
   # DELETE /resource/sign_out
   # def destroy
