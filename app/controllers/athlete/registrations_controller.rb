@@ -38,6 +38,10 @@ class Athlete::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def after_sign_up_path_for(resource_or_scope)
+  pages_athlete_path
+  end
+
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.

@@ -10,13 +10,21 @@ class Athlete::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   # def create
-  #   render 'athletes/sessions/new'
+  #   super
   # end
 
   # DELETE /resource/sign_out
   # def destroy
   #   super
   # end
+
+  def after_sign_out_path_for(resource_or_scope)
+  new_athlete_session_path
+  end
+
+  def after_sign_in_path_for(resource_or_scope)
+  pages_athlete_path
+  end
 
   # protected
 
