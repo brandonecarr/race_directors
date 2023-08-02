@@ -1,29 +1,76 @@
-<h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "athletes/shared/error_messages", resource: resource %>
+<!-- Section: Design Block -->
+<section class="text-center">
+    <div class="card-body py-5 px-md-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-4">
+          <h2 class="fw-bold mb-5">Sign up now</h2>
+          <form>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <!-- <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input type="text" id="form3Example1" class="form-control" />
+                  <label class="form-label" for="form3Example1">First name</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input type="text" id="form3Example2" class="form-control" />
+                  <label class="form-label" for="form3Example2">Last name</label>
+                </div>
+              </div>
+            </div> -->
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email Address", class: "form-control" %>
+            </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "form-control" %>
+            </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+            <!-- Password Confirmation input -->
+            <div class="form-outline mb-4">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation", class: "form-control" %>
+            </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+
+            <!-- Submit button -->
+            <%= f.submit "Sign up", class: "btn btn-primary btn-block mb-4" %><br />
+            <%= render "athletes/shared/links" %>
+            <!-- Register buttons -->
+            <!-- <div class="text-center">
+              <p>or sign up with:</p>
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-google"></i>
+              </button>
+
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+              </button>
+
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-github"></i>
+              </button>
+            </div> -->
+
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
+<!-- Section: Design Block -->
+
+
+
+
 <% end %>
-
-<%= render "athletes/shared/links" %>

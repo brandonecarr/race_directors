@@ -1,26 +1,42 @@
-<h2>Log in</h2>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <section class="text-center">
+    <div class="card-body py-5 px-md-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-4">
+          <h2 class="fw-bold mb-5">Login</h2>
+            <form>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email Address", class: "form-control" %>
+            </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "form-control" %>
+            </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+              <div class="col d-flex justify-content-center">
+                <!-- Checkbox -->
+                <% if devise_mapping.rememberable? %>
+                <div class="form-check">
+                  <%= f.check_box :remember_me, class: "form-check-input" %>
+                  <label class="form-check-label" for="form2Example31"> <%= f.label :remember_me %> </label>
+                </div>
+              </div>
+            </div>
+          <% end %>
+            <!-- Submit button -->
+            <%= f.submit "Log in", class: "btn btn-primary btn-block col-12 mb-4" %>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+              <%= render "athletes/shared/links" %>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </section>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "athletes/shared/links" %>
