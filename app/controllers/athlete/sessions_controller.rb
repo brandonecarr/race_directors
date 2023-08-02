@@ -18,6 +18,8 @@ class Athlete::SessionsController < Devise::SessionsController
   #   super
   # end
 
+  protected
+  
   def after_sign_out_path_for(resource_or_scope)
   new_athlete_session_path
   end
@@ -25,8 +27,6 @@ class Athlete::SessionsController < Devise::SessionsController
   def after_sign_in_path_for(resource_or_scope)
   pages_athlete_path
   end
-
-  # protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params

@@ -19,4 +19,5 @@ Rails.application.routes.draw do
 
     get 'pages/athlete'
     get 'pages/director'
+
 end
