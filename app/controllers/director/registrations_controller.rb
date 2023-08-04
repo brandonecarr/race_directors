@@ -40,8 +40,12 @@ class Director::RegistrationsController < Devise::RegistrationsController
 
   protected
   
+  def event_params
+    params.require(:event).permit(:company_name, :email, :password, :password_confirmation)
+  end
+
   def after_sign_up_path_for(resource_or_scope)
-  pages_director_path
+    pages_director_path
   end
 
   # If you have extra params to permit, append them to the sanitizer.

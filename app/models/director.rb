@@ -3,4 +3,8 @@ class Director < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def change
+    has_many :events
+  end
 end

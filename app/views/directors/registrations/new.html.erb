@@ -5,7 +5,7 @@
     <div class="card-body py-5 px-md-5">
       <div class="row d-flex justify-content-center">
         <div class="col-lg-4">
-          <h2 class="fw-bold mb-5">Sign up now</h2>
+          <h2 class="fw-bold mb-5">Register as a Race Director</h2>
           <form>
             <!-- 2 column grid layout with text inputs for the first and last names -->
             <!-- <div class="row">
@@ -28,6 +28,10 @@
               <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email Address", class: "form-control" %>
             </div>
 
+            <div class="form-outline mb-4">
+              <%= f.text_field :company_name, placeholder: "Company Name", class: "form-control" %>
+            </div>
+
             <!-- Password input -->
             <div class="form-outline mb-4">
               <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "form-control" %>
@@ -40,7 +44,7 @@
 
 
             <!-- Submit button -->
-            <%= f.submit "Sign up", class: "btn btn-primary btn-block mb-4" %><br />
+            <%= f.submit "Sign up", class: "btn btn-primary btn-block col-12 mb-4" %><br />
             <%= render "directors/shared/links" %>
             <!-- Register buttons -->
             <!-- <div class="text-center">
